@@ -8,6 +8,8 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 
 import com.live.order.domain.CancelOrderRequest;
 import com.live.order.domain.CancelOrderResponse;
+import com.live.order.domain.ViewDogsRequest;
+import com.live.order.domain.ViewDogsResponse;
 import com.live.order.domain.ObjectFactory;
 import com.live.order.domain.PlaceOrderRequest;
 import com.live.order.domain.PlaceOrderResponse;
@@ -60,6 +62,18 @@ public class OrderServicePayloadRootAnnotationEndPoint {
         return new JAXBElement<CancelOrderResponse>(new QName(
                 "http://www.liverestaurant.com/OrderService/schema",
                 "cancelOrderResponse"), CancelOrderResponse.class, response);
+    }
+
+    @PayloadRoot(localPart = "viewDogs", namespace = "http://www.liverestaurant.com/OrderService/schema")
+    public JAXBElement<ViewDogsResponse> cancelOrder(
+    		ViewDogsRequest viewDogsRequest) {
+        CancelOrderResponse response = JAXB_OBJECT_FACTORY
+                .createCancelOrderResponse();
+        response.setCancelled(orderService.cancelOrder(viewDogsRequest
+                .getRefNumber()));
+        return new JAXBElement<ViewDogsResponse>(new QName(
+                "http://www.liverestaurant.com/OrderService/schema",
+                "viewDogsResponse"), ViewDogsResponse.class, response);
     }
 
 }
