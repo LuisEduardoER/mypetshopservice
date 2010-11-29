@@ -37,6 +37,22 @@
         </complexType>
     </element>
 
+    <element name="viewDogsRequest">
+        <complexType>
+            <sequence>
+                <element name="refNumber" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="viewDogsResponse">
+        <complexType>
+            <sequence>
+                <element name="cancelled" type="boolean"></element>
+            </sequence>
+        </complexType>
+    </element>
+
   <complexType name="Order">
       <sequence>
           <element name="refNumber" type="string"></element>
