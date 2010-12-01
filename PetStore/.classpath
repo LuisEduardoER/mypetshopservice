@@ -23,5 +23,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/Spring-ws/spring-ws-support-1.5.9.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/Spring-ws/spring-xml-1.5.9.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/log4j-1.2.15.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

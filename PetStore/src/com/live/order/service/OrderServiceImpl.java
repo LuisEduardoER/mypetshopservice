@@ -34,6 +34,12 @@ public class OrderServiceImpl implements OrderService {
         return true;
     }
     
+    @Override
+    public String viewDogs(String orderRef) {
+        logger.info("Order has been placed. Order Reference : " + orderRef);
+        return getRandomOrderRefNo();
+    }
+    
     private String getRandomOrderRefNo() {
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);

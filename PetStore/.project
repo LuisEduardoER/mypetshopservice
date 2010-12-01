@@ -45,5 +45,10 @@
 			<type>2</type>
 			<locationURI>TEMP</locationURI>
 		</link>
+		<link>
+			<name>log4j</name>
+			<type>2</type>
+			<location>C:/Java/workspace/PetStore/log4j</location>
+		</link>
 	</linkedResources>
 </projectDescription>
