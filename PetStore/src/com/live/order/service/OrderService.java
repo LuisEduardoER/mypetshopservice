@@ -18,5 +18,7 @@ public interface OrderService {
 
     String placeOrder(Order order);
 
+    String viewDogs(String orderRef);
+    
     boolean cancelOrder(String orderRef);
 }

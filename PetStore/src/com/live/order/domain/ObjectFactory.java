@@ -59,6 +59,10 @@ public class ObjectFactory {
     public CancelOrderRequest createCancelOrderRequest() {
         return new CancelOrderRequest();
     }
+    
+    public ViewDogsResponse createViewDogsResponse() {
+        return new ViewDogsResponse();
+    }
 
     /**
      * Create an instance of {@link PlaceOrderResponse }
