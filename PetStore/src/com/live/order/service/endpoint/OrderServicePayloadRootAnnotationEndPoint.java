@@ -65,14 +65,17 @@ public class OrderServicePayloadRootAnnotationEndPoint {
     }
 
     @PayloadRoot(localPart = "viewDogs", namespace = "http://www.liverestaurant.com/OrderService/schema")
-    public JAXBElement<ViewDogsResponse> cancelOrder(
+    public JAXBElement<ViewDogsResponse> viewDogs(
     		ViewDogsRequest viewDogsRequest) {
+    	
     	ViewDogsResponse response = JAXB_OBJECT_FACTORY.createViewDogsResponse();
-        response.setCancelled(orderService.cancelOrder(viewDogsRequest
+        response.setProduct(orderService.viewDogs(viewDogsRequest
                 .getRefNumber()));
+        
         QName qnm = new QName(
                 "http://www.liverestaurant.com/OrderService/schema",
         "viewDogsResponse");
+        
         return new JAXBElement<ViewDogsResponse>(qnm, ViewDogsResponse.class, response);
     }
 
