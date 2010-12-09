@@ -3,6 +3,7 @@ package com.live.order.service.endpoint;
 import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
 
+import org.apache.log4j.Logger;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 
@@ -14,6 +15,7 @@ import com.live.order.domain.ObjectFactory;
 import com.live.order.domain.PlaceOrderRequest;
 import com.live.order.domain.PlaceOrderResponse;
 import com.live.order.service.OrderService;
+import com.live.order.service.OrderServiceImpl;
 
 /**
 * <pre>
@@ -67,7 +69,6 @@ public class OrderServicePayloadRootAnnotationEndPoint {
     @PayloadRoot(localPart = "viewDogs", namespace = "http://www.liverestaurant.com/OrderService/schema")
     public JAXBElement<ViewDogsResponse> viewDogs(
     		ViewDogsRequest viewDogsRequest) {
-    	
     	ViewDogsResponse response = JAXB_OBJECT_FACTORY.createViewDogsResponse();
         response.setProduct(orderService.viewDogs(viewDogsRequest
                 .getRefNumber()));

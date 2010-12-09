@@ -25,10 +25,6 @@ public class OrderServiceImpl implements OrderService {
 
     public OrderServiceImpl() {
     }
-    
-	public void setProductDao(ProductDao productDao) {
-		this.productDao = productDao;
-	}
 	
 	public List getProductListByCategory(String categoryId) {
 		return this.productDao.getProductListByCategory(categoryId);
@@ -37,11 +33,17 @@ public class OrderServiceImpl implements OrderService {
 	public List searchProductList(String keywords) {
 		return this.productDao.searchProductList(keywords);
 	}
-
+// New methods //
+	public void setProductDao(ProductDao productDao) {
+		this.productDao = productDao;
+	}
+	
 	public Product getProduct(String productId) {
 		return this.productDao.getProduct(productId);
 	}
 
+// New methods //
+	
     @Override
     public String placeOrder(Order order) {
         logger.info("Order has been placed. Order Info is : " + ObjectUtils.toString(order));
@@ -62,12 +64,18 @@ public class OrderServiceImpl implements OrderService {
     }
     
     private String getRandomOrderRefNo() {
+    	/*
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
 
         return "Ref-" + year + "-" + month + "-" + day + "-" + Math.random();
-        
+        */
+    	String tmpstr = new String();
+    	//tmpstr = this.getProduct("1").getName();
+    	tmpstr = "viewDogs";
+        logger.info("viewDogs: " + tmpstr);
+        return tmpstr;
     }
 }
