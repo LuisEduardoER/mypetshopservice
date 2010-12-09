@@ -48,7 +48,7 @@
     <element name="viewDogsResponse">
         <complexType>
             <sequence>
-                <element name="cancelled" type="boolean"></element>
+                <element name="refNumber" type="string"></element>
             </sequence>
         </complexType>
     </element>
